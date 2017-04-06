@@ -31,7 +31,7 @@
         android:layout_margin="32dp"
         android:background="@drawable/button_design"
         android:padding="10dp"
-        android:text="next"/>
+        android:text="Get Final Score"/>
 
     <TextView
         android:id="@+id/score"

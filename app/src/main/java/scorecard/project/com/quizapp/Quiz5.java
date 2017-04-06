@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static scorecard.project.com.quizapp.Quiz1.myscore;
 
@@ -46,6 +47,7 @@ public class Quiz5 extends AppCompatActivity {
         if (textanswer.equals("Larray Page") || textanswer.equals("Larry Page, Sergey Brin") || textanswer.equals("Sergey Brin")) {
             ++myscore;
             scoretextview.setText("Your Score : " + myscore);
+            Toast.makeText(getApplicationContext(),"Your Score is "+myscore,Toast.LENGTH_LONG).show();
             Intent i = new Intent(Quiz5.this, Score.class);
             i.putExtra("score", myscore);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
