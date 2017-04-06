@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="scorecard.project.com.quizapp.Quiz5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Who created Google?"
+        android:textSize="24sp"/>
+
+    <EditText
+        android:id="@+id/correct_answer9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:hint="Name seprated by commas"
+        android:padding="15dp"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/checkAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="32dp"
+        android:background="@drawable/button_design"
+        android:padding="10dp"
+        android:text="next"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>
