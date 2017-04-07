@@ -8,17 +8,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Quiz2 extends AppCompatActivity {
-    int myscore = 0;
+    int myscore = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz2);
-        Intent i = getIntent();
-        myscore = i.getIntExtra("score", 0);
         final RadioButton correctanswer2 = (RadioButton) findViewById(R.id.correct_answer2);
         Button answer = (Button) findViewById(R.id.checkAnswer);
         final TextView scoretextview = (TextView) findViewById(R.id.score);
@@ -27,11 +24,11 @@ public class Quiz2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (correctanswer2.isChecked()) {
-                    ++myscore;
+
                     scoretextview.setText("Your Score : " + myscore);
                     Intent i = new Intent(Quiz2.this, Quiz3.class);
-                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    i.putExtra("score", myscore);
+                    //  i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    //  i.putExtra("score", myscore);
                     startActivity(i);
                 } else {
 
@@ -43,9 +40,5 @@ public class Quiz2 extends AppCompatActivity {
 
         });
     }
-    @Override
-    public void onBackPressed() {
 
-        Toast.makeText(getApplicationContext(),"You can not go back", Toast.LENGTH_LONG).show();
-    }
 }

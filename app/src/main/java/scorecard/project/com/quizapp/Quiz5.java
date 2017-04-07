@@ -10,7 +10,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import static scorecard.project.com.quizapp.Quiz1.myscore;
 
@@ -23,8 +22,7 @@ public class Quiz5 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz5);
-        Intent i = getIntent();
-        myscore = i.getIntExtra("score", 0);
+        myscore = 4;
         ans = (EditText) findViewById(R.id.correct_answer9);
 
         Button answer = (Button) findViewById(R.id.checkAnswer);
@@ -37,8 +35,6 @@ public class Quiz5 extends AppCompatActivity {
                 check_answer();
             }
         });
-
-
     }
 
     public void check_answer() {
@@ -47,27 +43,19 @@ public class Quiz5 extends AppCompatActivity {
         if (textanswer.equals("Larray Page") || textanswer.equals("Larry Page, Sergey Brin") || textanswer.equals("Sergey Brin")) {
             ++myscore;
             scoretextview.setText("Your Score : " + myscore);
-            Toast.makeText(getApplicationContext(),"Your Score is "+myscore,Toast.LENGTH_LONG).show();
             Intent i = new Intent(Quiz5.this, Score.class);
-            i.putExtra("score", myscore);
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            //i.putExtra("score", myscore);
+            //i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
         } else if (TextUtils.isEmpty(textanswer)) {
-
             scoretextview.setText("Please Enter Something");
 
         } else {
-
-
             scoretextview.setText("Opps! That's Wrong, Try Again Please");
 
         }
     }
-    @Override
-    public void onBackPressed() {
 
-        Toast.makeText(getApplicationContext(),"You can not go back", Toast.LENGTH_LONG).show();
-    }
 }
 
 

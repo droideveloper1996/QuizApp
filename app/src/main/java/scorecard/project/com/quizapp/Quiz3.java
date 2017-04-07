@@ -8,26 +8,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import static scorecard.project.com.quizapp.Quiz1.myscore;
 
 public class Quiz3 extends AppCompatActivity {
+    int myscore = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz3);
-        Intent i = getIntent();
-        myscore = i.getIntExtra("score", 0);
         final CheckBox correctanswer5 = (CheckBox) findViewById(R.id.correct_answer5);
         final CheckBox correctanswer4 = (CheckBox) findViewById(R.id.correct_answer4);
         final CheckBox wronganswer4 = (CheckBox) findViewById(R.id.wrong_answer3);
         final CheckBox wronganswer2 = (CheckBox) findViewById(R.id.wrong_answer2);
-
-
-
-
         Button answer = (Button) findViewById(R.id.checkAnswer);
         final TextView scoretextview = (TextView) findViewById(R.id.score);
         scoretextview.setText("Your Score : " + myscore);
@@ -35,21 +27,18 @@ public class Quiz3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                 if(wronganswer2.isChecked()||wronganswer4.isChecked()){
+                if (wronganswer2.isChecked() || wronganswer4.isChecked()) {
 
                     scoretextview.setText("Opps! That's Wrong, Try Again Please");
 
-                }
-                else if (correctanswer4.isChecked() && correctanswer5.isChecked()) {
-                    ++myscore;
+                } else if (correctanswer4.isChecked() && correctanswer5.isChecked()) {
+
                     scoretextview.setText("Your Score : " + myscore);
                     Intent i = new Intent(Quiz3.this, Quiz4.class);
-                    i.putExtra("score", myscore);
-                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    // i.putExtra("score", myscore);
+                    // i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
-                }
-
-                else {
+                } else {
 
                     scoretextview.setText("Opps! That's Wrong, Try Again Please");
 
@@ -59,9 +48,5 @@ public class Quiz3 extends AppCompatActivity {
 
         });
     }
-    @Override
-    public void onBackPressed() {
 
-        Toast.makeText(getApplicationContext(),"You can not go back", Toast.LENGTH_LONG).show();
-    }
 }
