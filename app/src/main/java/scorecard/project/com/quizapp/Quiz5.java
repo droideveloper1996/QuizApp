@@ -41,7 +41,7 @@ public class Quiz5 extends AppCompatActivity {
         textanswer = ans.getText().toString().trim();
         Log.i("dfb", textanswer);
         if (textanswer.equals("Larray Page") || textanswer.equals("Larry Page, Sergey Brin") || textanswer.equals("Sergey Brin")) {
-            ++myscore;
+            myscore=5;
             scoretextview.setText("Your Score : " + myscore);
             Intent i = new Intent(Quiz5.this, Score.class);
             //i.putExtra("score", myscore);
