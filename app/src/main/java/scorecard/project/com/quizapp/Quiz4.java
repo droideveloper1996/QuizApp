@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static scorecard.project.com.quizapp.Quiz1.myscore;
 
@@ -44,5 +45,10 @@ public class Quiz4 extends AppCompatActivity {
 
 
         });
+    }
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(getApplicationContext(),"You can not go back", Toast.LENGTH_LONG).show();
     }
 }

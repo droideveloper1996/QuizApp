@@ -63,6 +63,11 @@ public class Quiz5 extends AppCompatActivity {
 
         }
     }
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(getApplicationContext(),"You can not go back", Toast.LENGTH_LONG).show();
+    }
 }
 
 

@@ -31,6 +31,7 @@
         </activity>
         <activity android:name=".Quiz5">
         </activity>
+
     </application>
 
 </manifest>

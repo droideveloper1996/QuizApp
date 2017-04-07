@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Quiz1 extends AppCompatActivity {
     public static int myscore = 0;
@@ -44,4 +45,9 @@ public class Quiz1 extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(getApplicationContext(),"You can not go back", Toast.LENGTH_LONG).show();
+    }
 }
